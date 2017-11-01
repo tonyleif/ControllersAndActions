@@ -17,16 +17,19 @@ namespace ControllersAndActions.Controllers
 
         public ActionResult ProduceOutput()
         {
-            if (Server.MachineName == "TINY")
-            {
-                //Response.Redirect("/Basic/Index");
-                return new CustomRedirectResult { Url = "/Basic/Index" };
-            }
-            else
-            {
-                //Response.Write("Controller: Derived, Action: ProduceOutput");
-                return null;
-            }
+            return Redirect("/Basic/Index");
+            //return new RedirectResult("/Basic/Index");
+
+            //if (Server.MachineName == "TINY")
+            //{
+            //    //Response.Redirect("/Basic/Index");
+            //    return new CustomRedirectResult { Url = "/Basic/Index" };
+            //}
+            //else
+            //{
+            //    //Response.Write("Controller: Derived, Action: ProduceOutput");
+            //    return null;
+            //}
         }
     }
 }
