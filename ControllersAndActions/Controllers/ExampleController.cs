@@ -11,7 +11,7 @@ namespace ControllersAndActions.Controllers
         // GET: Example
         public ActionResult Index()
         {
-            return View("HomePage");
+            return View();
         }
     }
 }
