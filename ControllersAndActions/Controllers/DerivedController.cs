@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ControllersAndActions.Infrastructure;
 
 namespace ControllersAndActions.Controllers
 {
@@ -14,15 +15,17 @@ namespace ControllersAndActions.Controllers
             return View("MyView");
         }
 
-        public void ProduceOutput()
+        public ActionResult ProduceOutput()
         {
             if (Server.MachineName == "TINY")
             {
-                Response.Redirect("/Basic/Index");
+                //Response.Redirect("/Basic/Index");
+                return new CustomRedirectResult { Url = "/Basic/Index" };
             }
             else
             {
-                Response.Write("Controller: Derived, Action: ProduceOutput");
+                //Response.Write("Controller: Derived, Action: ProduceOutput");
+                return null;
             }
         }
     }
