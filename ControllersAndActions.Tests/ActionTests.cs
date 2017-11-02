@@ -15,7 +15,19 @@ namespace ControllersAndActions.Tests
             //Act
             ViewResult result = (ViewResult)target.Index();
             //Assert
-            Assert.AreEqual("HomePage", result.ViewName);
+            Assert.AreEqual("", result.ViewName);
+        }
+
+        [TestMethod]
+        public void ViewSelectionTest()
+        {
+            //Arrange
+            ExampleController target = new ExampleController();
+            //Act
+            ViewResult result = (ViewResult)target.Index();
+            //Assert
+            Assert.AreEqual("", result.ViewName);
+            Assert.IsInstanceOfType(result.ViewData.Model, typeof(System.DateTime));
         }
     }
 }
